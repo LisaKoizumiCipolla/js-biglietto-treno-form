@@ -15,18 +15,24 @@ let price;
 //Calc final price
 let finalPrice;
 
+
 //click on button
 button.addEventListener('click', 
 function()
 {
 
-    if ( userAge.value < 18) {
+    if (userAge > 130 || userAge < 0) {
+        message = "Invalid data"
+    } else if ( userAge.value < 18) {
         discount = 19.4;
     } else if (userAge.value >= 65) {
         discount = 37.7;
     } else {
+        message = "You are not suitable for any discount"
         discount = 0;
     } 
+
+
 
     console.log(discount)
 
@@ -38,4 +44,13 @@ function()
 
     console.log(finalPrice)
 
+    //Print on HTML
+    const dataRecap = document.getElementById('data-recap');
+
+    dataRecap.innerHTML = 
+    "Passenger age: " + userAge.value + "<br>"
+    + "Travel distance: " + travelDistance.value + "Km" + "<br>"
+    + "Ticket price: " + price + "€" + "<br>"
+    + "Discount applied: " + discount + "%" + "<br>"
+    + "Final price: " + finalPrice + "€";
 });
