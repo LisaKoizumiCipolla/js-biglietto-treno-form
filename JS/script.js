@@ -34,7 +34,7 @@ function()
 
     console.log(price);
     
-    let finalPrice = price - ((discount / 100) * price).toFixed(2);
+    let finalPrice = (price - ((discount / 100) * price)).toFixed(2);
 
     console.log(finalPrice)
 
