@@ -1,7 +1,7 @@
 
 //Retrieve info
 const userAge = document.getElementById('user-age');
-const travelDistance = document.getElementById('travel-distance')
+const travelDistance = document.getElementById('travel-distance');
 
 //input button
 const button = document.getElementById('button');
@@ -21,7 +21,7 @@ button.addEventListener('click',
 function()
 {
 
-    if (userAge > 130 || userAge < 0) {
+    if (userAge.value > 130 || userAge.value < 0) {
         message = "Invalid data"
     } else if ( userAge.value < 18) {
         discount = 19.4;
@@ -36,7 +36,7 @@ function()
 
     console.log(discount)
 
-    let price = (travelDistance.value * 0.233);
+    let price = (travelDistance.value * 0.233).toFixed(2);
 
     console.log(price);
     
